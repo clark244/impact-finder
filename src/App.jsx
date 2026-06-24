@@ -1,9 +1,8 @@
 import React, { useState, useRef } from "react";
 
 // ── Impact Commitment Finder ──────────────────────────────────────────────
-// The browser calls /api/commitment (a Netlify serverless function) which holds
-// the API key and runs the documented extraction procedure. Every result is an
-// unverified first-pass draft needing human review (methodology Section 6.2).
+// Browser calls /api/commitment (Netlify function holding the API key).
+// Every result is an unverified first-pass draft needing human review.
 
 export default function App() {
   const [company, setCompany] = useState("");
@@ -46,7 +45,12 @@ export default function App() {
   return (
     <div className="page">
       <header className="masthead">
-        <div className="kicker">Impact Commitment Finder</div>
+        <div className="brandRow">
+          <img className="logo" src="/cobalt-logo.png" alt="Cobalt" />
+          <span className="brandName">Cobalt</span>
+          <span className="brandDivider" aria-hidden="true" />
+          <span className="kicker">Impact Commitment Finder</span>
+        </div>
         <h1>
           What does a company <em>say</em> it does for the world?
         </h1>
@@ -78,14 +82,14 @@ export default function App() {
             onKeyDown={(e) => e.key === "Enter" && run()}
             aria-label="Website (optional)"
           />
+          <button
+            className="go"
+            onClick={() => run()}
+            disabled={status === "loading" || !company.trim()}
+          >
+            {status === "loading" ? "Reading…" : "Find commitment"}
+          </button>
         </div>
-        <button
-          className="go"
-          onClick={() => run()}
-          disabled={status === "loading" || !company.trim()}
-        >
-          {status === "loading" ? "Reading…" : "Find commitment"}
-        </button>
       </section>
 
       {status === "loading" && (
@@ -118,8 +122,8 @@ export default function App() {
           <details className="details">
             <summary>
               <span className="summaryText">Details</span>
-              <span className="summaryHint">company, slots & sources</span>
-              <span className="chevron" aria-hidden="true">›</span>
+              <span className="summaryHint">company, slots &amp; sources</span>
+              <span className="chevron" aria-hidden="true">&#8250;</span>
             </summary>
 
             <div className="detailsBody">
@@ -165,7 +169,7 @@ export default function App() {
 
       <footer className="foot">
         Captures stated claims only — no fact-checking, ranking, or endorsement.
-        A blank slot reads “not stated” rather than a guess.
+        A blank slot reads &ldquo;not stated&rdquo; rather than a guess.
       </footer>
     </div>
   );
