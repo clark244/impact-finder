@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+# Lets the browser call /api/commitment, which Netlify routes to the
+# serverless function. The function holds the API key; the browser never sees it.
+[[redirects]]
+  from = "/api/commitment"
+  to = "/.netlify/functions/commitment"
+  status = 200
