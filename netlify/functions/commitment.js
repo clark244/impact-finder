@@ -120,6 +120,19 @@ Rules:
 1. Record only what the company claims. Do not evaluate, rank, or fact-check.
 2. Keep mechanism (what it does) separate from outcome (the change it produces). Do not put one in the other's slot.
 3. Any stated outcome counts, including modest ones like "saves time." Do not upgrade or dismiss it.
+3a. An outcome is often NOT written as a separate "so that..." sentence. It frequently hangs off the mechanism as a participle or trailing clause — e.g. "...provides practice in X, BUILDING the communication skills students need" or "...a platform that does X, HELPING teachers do Y." When you see "building / developing / improving / strengthening / reducing / increasing [something for the beneficiary]" attached to a mechanism description, that trailing part is the INTENDED OUTCOME. Split it out into the outcome slot; do not leave the whole sentence sitting in the mechanism slot.
+
+   Worked example WHERE AN OUTCOME IS PRESENT:
+     Page text: "structured practice in constructive disagreement—building the communication and critical thinking skills students need."
+     mechanism = "structured practice in constructive disagreement"
+     outcome   = "build students' communication and critical thinking skills"
+
+   Worked example WHERE NO OUTCOME IS STATED (do not invent one):
+     Page text: "An AI tool that analyzes essays and flags grammar errors."
+     mechanism = "an AI tool that analyzes essays and flags grammar errors"
+     outcome   = "not stated"   (the page names no change it intends to produce; do NOT infer "improves writing")
+
+   The difference: in the first, the page explicitly names a change for the beneficiary. In the second, it only describes what the tool does. Only fill the outcome slot when the page actually names a change. When in doubt, "not stated" is correct.
 4. If a product names multiple beneficiaries (e.g. teachers AND students), capture the outcome for each.
 5. If a slot is genuinely not stated anywhere in the provided text, write exactly "not stated". Never invent a beneficiary, mechanism, or outcome.
 6. Quote sparingly: at most one short verbatim phrase (under 15 words) per source page, in quotation marks. Paraphrase everything else.
