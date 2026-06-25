@@ -54,11 +54,6 @@ export default function App() {
         <h1>
           What does a company <em>say</em> it does for the world?
         </h1>
-        <p className="standfirst">
-          Enter a company. The finder reads its public pages and returns a single
-          stated commitment — who it helps, how, and the change it intends —
-          captured as written, not judged.
-        </p>
       </header>
 
       <section className="console">
@@ -93,9 +88,8 @@ export default function App() {
       </section>
 
       {status === "loading" && (
-        <section className="working" aria-live="polite">
-          <div className="scan" />
-          <p>Locating the official site, reading the landing and mission pages, sorting statements into slots…</p>
+        <section className="working" aria-live="polite" aria-label="Reading…">
+          <img className="workMark" src="/cobalt-logo.png" alt="" aria-hidden="true" />
         </section>
       )}
 
