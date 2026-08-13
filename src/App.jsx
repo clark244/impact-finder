@@ -163,7 +163,6 @@ export default function App() {
 
       <footer className="foot">
         Captures stated claims only — no fact-checking, ranking, or endorsement.
-        A blank slot reads &ldquo;not stated&rdquo; rather than a guess.
       </footer>
     </div>
   );
