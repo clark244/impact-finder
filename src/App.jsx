@@ -1,10 +1,12 @@
 import React, { useState, useRef } from "react";
+import BatchMode from "./BatchMode.jsx";
 
 // ── Impact Commitment Finder ──────────────────────────────────────────────
 // Browser calls /api/commitment (Netlify function holding the API key).
 // Every result is an unverified first-pass draft needing human review.
 
 export default function App() {
+  const [mode, setMode] = useState("single"); // single | batch
   const [company, setCompany] = useState("");
   const [url, setUrl] = useState("");
   const [status, setStatus] = useState("idle"); // idle | loading | done | error
@@ -56,6 +58,31 @@ export default function App() {
         </h1>
       </header>
 
+      <div className="modeToggle" role="tablist">
+        <button
+          type="button"
+          role="tab"
+          aria-selected={mode === "single"}
+          className={`modeTab ${mode === "single" ? "modeTabActive" : ""}`}
+          onClick={() => setMode("single")}
+        >
+          Single company
+        </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={mode === "batch"}
+          className={`modeTab ${mode === "batch" ? "modeTabActive" : ""}`}
+          onClick={() => setMode("batch")}
+        >
+          Batch upload
+        </button>
+      </div>
+
+      {mode === "batch" ? (
+        <BatchMode />
+      ) : (
+        <>
       <section className="console">
         <div className="fields">
           <input
@@ -159,6 +186,8 @@ export default function App() {
             </div>
           </details>
         </section>
+      )}
+        </>
       )}
 
       <footer className="foot">

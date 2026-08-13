@@ -45,6 +45,80 @@ body{
 .masthead h1 em{font-style:normal;color:var(--cobalt);}
 .standfirst{font-size:16px;line-height:1.55;color:var(--muted);margin:0;}
 
+/* ── Mode toggle ──────────────────────────────────────── */
+.modeToggle{display:flex;gap:4px;margin-bottom:20px;background:var(--wash);border:1px solid var(--line);border-radius:10px;padding:4px;}
+.modeTab{
+  flex:1;font-family:inherit;font-size:14px;font-weight:600;color:var(--muted);
+  background:transparent;border:none;border-radius:7px;padding:9px 12px;cursor:pointer;
+  transition:background .15s,color .15s;
+}
+.modeTab:hover{color:var(--ink);}
+.modeTabActive{background:var(--paper);color:var(--ink);box-shadow:0 1px 2px rgba(16,19,26,.06);}
+
+/* ── Batch mode ───────────────────────────────────────── */
+.batch{margin-bottom:8px;}
+.uploadRow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
+.uploadBtn{
+  display:inline-block;font-size:14px;font-weight:600;color:var(--cobalt-ink);
+  background:var(--cobalt-wash);border:1px solid var(--cobalt);border-radius:9px;
+  padding:11px 16px;cursor:pointer;transition:background .15s;
+}
+.uploadBtn:hover{background:#e2e9fd;}
+.fileName{font-size:13px;color:var(--muted);}
+
+.tipWrap{position:relative;}
+.tipIcon{
+  width:20px;height:20px;border-radius:50%;border:1px solid var(--line);background:var(--paper);
+  color:var(--faint);font-size:12px;font-weight:700;cursor:pointer;line-height:1;
+  display:flex;align-items:center;justify-content:center;padding:0;
+}
+.tipIcon:hover{border-color:var(--cobalt);color:var(--cobalt);}
+.tipPopover{
+  position:absolute;top:26px;left:0;z-index:10;width:260px;background:var(--paper);
+  border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 28px rgba(16,19,26,.12);
+  padding:14px 16px;font-size:13px;line-height:1.5;color:var(--body);
+}
+.tipPopover strong{display:block;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:8px;}
+.tipPopover p{margin:6px 0;}
+.tipPopover ul{margin:6px 0;padding-left:18px;}
+.tipPopover li{margin-bottom:3px;}
+.tipPopover a{color:var(--cobalt);font-weight:600;text-decoration:none;display:inline-block;margin-top:6px;}
+.tipPopover a:hover{text-decoration:underline;}
+
+.batchActions{display:flex;align-items:center;gap:14px;margin:14px 0;}
+.linkBtn{
+  font-family:inherit;font-size:14px;font-weight:600;color:var(--muted);
+  background:transparent;border:none;cursor:pointer;padding:4px;
+}
+.linkBtn:hover{color:var(--ink);text-decoration:underline;}
+
+.batchProgress{margin:18px 0;}
+.progressBarTrack{height:6px;border-radius:4px;background:var(--line-soft);overflow:hidden;margin-bottom:8px;}
+.progressBarFill{height:100%;background:var(--cobalt);border-radius:4px;transition:width .3s ease;}
+.progressLabel{font-size:13px;color:var(--muted);}
+
+.batchTop{margin-top:22px;}
+
+.tableWrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin-top:14px;}
+.resultsTable{width:100%;border-collapse:collapse;font-size:13px;min-width:900px;}
+.resultsTable th{
+  text-align:left;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);font-weight:700;padding:11px 14px;background:var(--wash);
+  border-bottom:1px solid var(--line);white-space:nowrap;
+}
+.resultsTable td{padding:12px 14px;border-bottom:1px solid var(--line-soft);vertical-align:top;color:var(--body);max-width:260px;}
+.resultsTable tr:last-child td{border-bottom:none;}
+.resultsTable a{color:var(--cobalt);text-decoration:none;word-break:break-all;}
+.resultsTable a:hover{text-decoration:underline;}
+.blankCell{color:var(--faint);font-style:italic;}
+.rowError{background:var(--amber-wash);}
+.errorCell{color:var(--amber);}
+.reviewBadge{
+  display:inline-block;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--amber);background:var(--amber-wash);border:1px solid var(--amber-line);
+  border-radius:20px;padding:3px 10px;cursor:help;
+}
+
 /* ── Console ──────────────────────────────────────────── */
 .console{margin-bottom:8px;}
 .fields{display:flex;gap:10px;flex-wrap:wrap;}
