@@ -3,7 +3,7 @@
 Enter a company name (and optionally its website); the app reads the company's
 public pages and returns a one-sentence impact commitment — beneficiary,
 mechanism, and intended outcome — captured as stated, not judged. Every result
-is an **unverified first-pass draft** that needs human review..
+is an **unverified first-pass draft** that needs human review.
 
 The browser never holds the API key. It calls `/api/commitment`, a Netlify
 serverless function that holds the key server-side and talks to the Anthropic API.
